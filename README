@@ -11,7 +11,7 @@ You have to call a simple component only and it will result in the switch.
   * Install the plugin
 
     {{{
-      symfony plugin-install http://plugins.symfony-project.com/sfLanguageSwitch
+      symfony plugin-install http://plugins.symfony-project.com/sfLanguageSwitchPlugin
     }}}
 
   * Enable the module in your `settings.yml`
@@ -76,8 +76,8 @@ If you want to customize this template:
 
 == TODO ==
 
-  * make it more flexible
-  * add it to repository
+  * make it more flexible and add more options
+  * add a switch to change between one big flagmap and many small flags
 
 == Changelog ==
 
