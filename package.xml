@@ -1,32 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <package packagerversion="1.4.11" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
   <name>sfLanguageSwitchPlugin</name>
   <channel>pear.symfony-project.com</channel>
   <summary>Language switcher for symfony</summary>
   <description>This plugin gives you a component to include a simple language switcher. It holds the current URL and changes the sf_culture parameter.</description>
-
   <lead>
     <name>Thomas BOERGER</name>
     <user>mosez</user>
     <email>tb@mosez.net</email>
     <active>yes</active>
   </lead>
-
   <date>2008-09-03</date>
-
   <version>
     <release>0.0.2</release>
     <api>0.0.2</api>
   </version>
-
   <stability>
     <release>beta</release>
     <api>beta</api>
   </stability>
-
   <license uri="http://www.symfony-project.org/license">MIT license</license>
   <notes>-</notes>
-
   <contents>
     <dir name="/">
       <file role="data" name="README" />
@@ -40,7 +34,8 @@
             <file role="data" name="BasesfLanguageSwitchComponents.class.php" />
           </dir>
           <dir name="templates">
-          <file role="data" name="_get.php" />
+            <file role="data" name="_get.php" />
+          </dir>
         </dir>
       </dir>
       <dir name="web">
@@ -293,7 +288,6 @@
       </dir>
     </dir>
   </contents>
-
   <dependencies>
     <required>
       <php>
@@ -311,10 +305,8 @@
       </package>
     </required>
   </dependencies>
-
   <phprelease>
   </phprelease>
-
   <changelog>
     <release>
       <version>
