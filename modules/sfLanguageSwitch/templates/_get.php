@@ -1,5 +1,5 @@
 <ul id="lang">
-  <?php foreach($languages as $language => $information): ?>
+  <?php foreach($sf_data->getRaw('languages') as $language => $information): ?>
     <li<?php echo $language == $sf_user->getCulture() ? ' class="active"' : '' ?>>
       <?php echo link_to(
         image_tag(

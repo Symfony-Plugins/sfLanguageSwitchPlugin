@@ -9,7 +9,7 @@
  */
 
 /**
- * Language switch component.
+ * Language switch component base.
  *
  * @package    symfony
  * @subpackage plugin
@@ -21,51 +21,25 @@ class BasesfLanguageSwitchComponents extends sfComponents
   /**
    * Get the language switch.
    *
-   *  @param void
-   *  @return integer sfView::SUCCESS
+   * @access public
+   * @param  void
+   * @return void
    */
   public function executeGet()
   {
-    // define languages placeholder
+    $this->initializeSwitch();
+    $this->parseUrl();
+    $this->parseLanguages();
+
     $tempvalue = array();
-
-    // get routing class
-    $routing = sfRouting::getInstance();
-
-    // parse path info
-    $pathinfo = $routing->parse($this->getRequest()->getPathInfo());
-
-    // set current module
-    $this->current_module = $pathinfo['module'];
-    unset($pathinfo['module']);
-
-    // set current action
-    $this->current_action = $pathinfo['action'];
-    unset($pathinfo['action']);
-
-    // get available lnaguages
-    $available_languages = sfConfig::get(
-      'app_sfLanguageSwitch_availableLanguages', 
-      array(
-        'en' => array(
-          'title' => 'English',
-          'image' => '/sfLanguageSwitch/images/flag/us.png'
-        ), 
-        'de' => array(
-          'title' => 'Deutsch'
-        )
-      )
-    );
-
-    // generate language information
-    foreach($available_languages as $language => $information)
+    foreach($this->languages_available as $language => $information)
     {
       $tempvalue[$language] = array();
-      $pathinfo['sf_culture'] = $language;
+      $this->pathinfo['sf_culture'] = $language;
 
       $firstend = false;
       $query = '';
-      foreach($pathinfo as $key => $value)
+      foreach($this->pathinfo as $key => $value)
       {
 	if(!$firstend)
 	{
@@ -101,8 +75,69 @@ class BasesfLanguageSwitchComponents extends sfComponents
       }
     }
 
-    // assign language information to view
     $this->languages = $tempvalue;
-    return sfView::SUCCESS;
+  }
+
+  /**
+   * Initialize the vars for language switch
+   *
+   * @access protected
+   * @param  void
+   * @return void
+   */
+  protected function initializeSwitch()
+  { 
+    if(method_exists($this->getContext(), 'getRouting'))
+    {
+      $this->routing = $this->getContext()->getRouting();
+    }
+    else
+    {
+      $this->routing = sfRouting::getInstance();
+    }
+    
+    $this->request = $this->getContext()->getRequest();
+
+    $this->languages_available = array(
+      'en' => array(
+        'title' => 'English',
+        'image' => '/sfLanguageSwitch/images/flag/gb.png'
+      )
+    );
+  } 
+
+  /**
+   * Parse the requested URL.
+   *
+   * @access protected
+   * @param  void
+   * @return void
+   */
+  protected function parseUrl()
+  {
+    $pathinfo = $this->routing->parse($this->request->getPathInfo());
+
+    $this->current_module = $pathinfo['module'];
+    unset($pathinfo['module']);
+
+    $this->current_action = $pathinfo['action'];
+    unset($pathinfo['action']);
+
+    $this->pathinfo = $pathinfo;
+  }
+
+  /**
+   * Get available languages by app.yml config.
+   *
+   * @access protected
+   * @param  void
+   * @return void
+   */
+  protected function parseLanguages()
+  {
+    $this->languages_available = sfConfig::get(
+      'app_sfLanguageSwitch_availableLanguages',
+      $this->languages_available
+    );
   }
 }
