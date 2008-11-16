@@ -10,14 +10,14 @@
     <email>tb@mosez.net</email>
     <active>yes</active>
   </lead>
-  <date>2008-09-03</date>
+  <date>2008-11-16</date>
   <version>
-    <release>0.0.2</release>
-    <api>0.0.2</api>
+    <release>0.0.3</release>
+    <api>0.0.3</api>
   </version>
   <stability>
-    <release>beta</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
   </stability>
   <license uri="http://www.symfony-project.org/license">MIT license</license>
   <notes>-</notes>
@@ -301,13 +301,28 @@
         <channel>pear.symfony-project.com</channel>
         <min>1.0.0</min>
         <max>1.2.0</max>
-        <exclude>1.2.0</exclude>
       </package>
     </required>
   </dependencies>
   <phprelease>
   </phprelease>
   <changelog>
+    <release>
+      <version>
+        <release>0.0.3</release>
+        <api>0.0.3</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-11-16</date>
+      <license>MIT</license>
+      <notes>
+        * mosez: removed 1.2 specific part from query array
+      </notes>
+    </release>    
     <release>
       <version>
         <release>0.0.2</release>

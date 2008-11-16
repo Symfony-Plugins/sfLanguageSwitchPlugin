@@ -116,6 +116,11 @@ class BasesfLanguageSwitchComponents extends sfComponents
   protected function parseUrl()
   {
     $pathinfo = $this->routing->parse($this->request->getPathInfo());
+    
+    if(isset($pathinfo['_sf_route']))
+    {
+      unset($pathinfo['_sf_route']);
+    }
 
     $this->current_module = $pathinfo['module'];
     unset($pathinfo['module']);
