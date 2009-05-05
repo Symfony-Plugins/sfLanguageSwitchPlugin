@@ -48,11 +48,11 @@ list of flags to switch the interface language.
           url:   /:sf_culture/:module/:action/*
           requirements: { sf_culture: (?:en|de) }
 
-# Installation 1.1 #
+# Installation 1.1 & 1.2 #
 
 *   Install the plugin
 
-        php symfony plugin:install sfLanguageSwitchPlugin --release=0.0.2
+        php symfony plugin:install sfLanguageSwitchPlugin
 
 *   Enable the module in your *settings.yml*
 
