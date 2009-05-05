@@ -7,13 +7,13 @@
   <lead>
     <name>Thomas BOERGER</name>
     <user>mosez</user>
-    <email>tb@mosez.net</email>
+    <email>t.boerger@mosez.net</email>
     <active>yes</active>
   </lead>
-  <date>2008-11-16</date>
+  <date>2009-05-05</date>
   <version>
-    <release>0.0.3</release>
-    <api>0.0.3</api>
+    <release>0.0.4</release>
+    <api>0.0.4</api>
   </version>
   <stability>
     <release>stable</release>
@@ -300,13 +300,30 @@
         <name>symfony</name>
         <channel>pear.symfony-project.com</channel>
         <min>1.0.0</min>
-        <max>1.2.0</max>
+        <max>1.3.0</max>
+        <exclude>1.3.0</exclude>
       </package>
     </required>
   </dependencies>
   <phprelease>
   </phprelease>
   <changelog>
+    <release>
+      <version>
+        <release>0.0.4</release>
+        <api>0.0.4</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2009-05-05</date>
+      <license>MIT</license>
+      <notes>
+        * mosez: fixed package.xml for symfony 1.2
+      </notes>
+    </release>	  
     <release>
       <version>
         <release>0.0.3</release>
