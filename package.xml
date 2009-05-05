@@ -12,8 +12,8 @@
   </lead>
   <date>2009-05-05</date>
   <version>
-    <release>0.0.4</release>
-    <api>0.0.4</api>
+    <release>0.0.5</release>
+    <api>0.0.5</api>
   </version>
   <stability>
     <release>stable</release>
@@ -308,6 +308,22 @@
   <phprelease>
   </phprelease>
   <changelog>
+    <release>
+      <version>
+        <release>0.0.5</release>
+        <api>0.0.5</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2009-05-05</date>
+      <license>MIT</license>
+      <notes>
+        * mosez: version bump because of deletion
+      </notes>
+    </release>	  
     <release>
       <version>
         <release>0.0.4</release>
